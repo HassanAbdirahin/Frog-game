@@ -468,22 +468,24 @@ _data = {
 }
 
 [node name="player" type="CharacterBody2D"]
+position = Vector2(1, 0)
 script = ExtResource("1_nymgy")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(123, 85)
+position = Vector2(-1, 0)
 shape = SubResource("CapsuleShape2D_wj6tn")
+metadata/_edit_lock_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(123, 80)
+position = Vector2(0, -5)
 sprite_frames = SubResource("SpriteFrames_se6sa")
 animation = &"idle"
 autoplay = "idle"
 frame = 1
-metadata/_edit_lock_ = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(122, 86)
+offset = Vector2(-101.28, -143.075)
 zoom = Vector2(1.85, 1.85)
 limit_left = 100
 limit_top = 0

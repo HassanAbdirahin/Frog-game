@@ -394,7 +394,7 @@ transform = Transform2D(1.345, 0, 0, 1.345, 0, 0)
 script = ExtResource("1_12aqc")
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="BG"]
-position = Vector2(-31.6543, 107.807)
+position = Vector2(-67.658, 115.242)
 motion_mirroring = Vector2(1120, 0)
 
 [node name="Plx-1" type="Sprite2D" parent="BG/ParallaxLayer"]
@@ -405,7 +405,7 @@ texture = ExtResource("2_4ykh4")
 [node name="Player" type="Node2D" parent="."]
 
 [node name="player" parent="Player" instance=ExtResource("1_3747c")]
-position = Vector2(395.425, 123)
+position = Vector2(395, 123)
 scale = Vector2(1.78, 1.78)
 
 [node name="enemy" type="Node2D" parent="."]
