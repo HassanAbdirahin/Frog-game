@@ -1,16 +1,18 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1738827962
+::res://::1738897309
 bg.gd::GDScript::-1::1738827900::0::1::::<>ParallaxBackground<>::
-bg.tscn::PackedScene::8521511425753643653::1738827900::0::1::::<><>::uid://biubrvn0c2vmt::::res://Assets/Jungle Asset Pack/parallax background/plx-1.png<>res://bg.gd<>uid://dbr8dun4uo420::::res://Assets/Jungle Asset Pack/parallax background/plx-2.png<>uid://cjt2dw0en3nic::::res://Assets/Jungle Asset Pack/parallax background/plx-3.png<>uid://b05461lu5ig8d::::res://Assets/Jungle Asset Pack/parallax background/plx-5.png
-game.tscn::PackedScene::5350557540093358168::1738827900::0::1::::<><>::res://bg.gd<>uid://bgdm5h6bc6f2c::::res://Player/player.tscn<>uid://biubrvn0c2vmt::::res://Assets/Jungle Asset Pack/parallax background/plx-1.png<>uid://dx1p3jqqjleul::::res://Assets/Terrain/Terrain (16x16).png<>uid://dn03qvavy8hlg::::res://mushroom.tscn
+bg.tscn::PackedScene::8521511425753643653::1738896719::0::1::::<><>::uid://biubrvn0c2vmt::::res://Assets/Jungle Asset Pack/parallax background/plx-1.png<>res://bg.gd<>uid://dbr8dun4uo420::::res://Assets/Jungle Asset Pack/parallax background/plx-2.png<>uid://cjt2dw0en3nic::::res://Assets/Jungle Asset Pack/parallax background/plx-3.png<>uid://b05461lu5ig8d::::res://Assets/Jungle Asset Pack/parallax background/plx-5.png
+game.tscn::PackedScene::5350557540093358168::1738896719::0::1::::<><>::res://bg.gd<>uid://bgdm5h6bc6f2c::::res://Player/player.tscn<>uid://biubrvn0c2vmt::::res://Assets/Jungle Asset Pack/parallax background/plx-1.png<>uid://dx1p3jqqjleul::::res://Assets/Terrain/Terrain (16x16).png<>uid://dn03qvavy8hlg::::res://mushroom.tscn<>res://HP.gd
+HP.gd::GDScript::-1::1738895368::0::1::::<>Label<>::
 icon.svg::CompressedTexture2D::162825994639424261::1738827900::1738827982::1::::<><>::
 main.gd::GDScript::-1::1738827900::0::1::::<>Node2D<>::
-main.tscn::PackedScene::5763447512389004897::1738827900::0::1::::<><>::res://main.gd<>uid://dtn5bvxolkfhd::::res://bg.tscn
-mushroom.gd::GDScript::-1::1738827900::0::1::::<>CharacterBody2D<>::
-mushroom.tscn::PackedScene::8125056214703032384::1738827900::0::1::::<><>::uid://cd1xocmk6joki::::res://Assets/Enemy/Mushroom/Mushroom-Attack.png<>res://mushroom.gd<>uid://duchd1xiopo3t::::res://Assets/Enemy/Mushroom/Mushroom-Die.png<>uid://c8oskf3xito51::::res://Assets/Enemy/Mushroom/Mushroom-Idle.png<>uid://tv5mk8n4hami::::res://Assets/Enemy/Mushroom/Mushroom-Run.png
+main.tscn::PackedScene::5763447512389004897::1738896719::0::1::::<><>::res://main.gd<>uid://dtn5bvxolkfhd::::res://bg.tscn
+mushroom.gd::GDScript::-1::1738896274::0::1::::<>CharacterBody2D<>::
+mushroom.tscn::PackedScene::8125056214703032384::1738896719::0::1::::<><>::uid://cd1xocmk6joki::::res://Assets/Enemy/Mushroom/Mushroom-Attack.png<>res://mushroom.gd<>uid://duchd1xiopo3t::::res://Assets/Enemy/Mushroom/Mushroom-Die.png<>uid://c8oskf3xito51::::res://Assets/Enemy/Mushroom/Mushroom-Idle.png<>uid://tv5mk8n4hami::::res://Assets/Enemy/Mushroom/Mushroom-Run.png
 PlayerDetection.gd::GDScript::-1::1738827900::0::1::::<>Area2D<>::
-::res://Assets/::1738827900
+::res://Assets/::1738897257
 20 Enemies.png::CompressedTexture2D::5555033703946394287::1738827899::1738827899::1::::<><>::
+coin-Sheet.png::CompressedTexture2D::8331922462847279549::1691924224::1738897257::1::::<><>::
 Hello.png::CompressedTexture2D::7763936811133681313::1738827899::1738827899::1::::<><>::
 sky.jpg::CompressedTexture2D::516739018580022019::1738827900::1738827900::1::::<><>::
 ::res://Assets/Background/::1738827899
@@ -253,6 +255,7 @@ Idle.png::CompressedTexture2D::7871636320287844613::1738827900::1738827900::1:::
 ::res://Assets/Traps/Trampoline/::1738827900
 Idle.png::CompressedTexture2D::5305565759353970496::1738827900::1738827900::1::::<><>::
 Jump (28x28).png::CompressedTexture2D::3005573199047577291::1738827900::1738827900::1::::<><>::
-::res://Player/::1738827900
-player.gd::GDScript::-1::1738827900::0::1::::<>CharacterBody2D<>::
-player.tscn::PackedScene::2814529472115540260::1738827900::0::1::::<><>::uid://bjyh1ga8puptw::::res://Assets/Main Characters/Ninja Frog/Hit (32x32).png<>res://Player/player.gd<>uid://dhw3852fqqdu6::::res://Assets/Main Characters/Ninja Frog/Idle (32x32).png<>uid://ds3qq4mf1sxij::::res://Assets/Main Characters/Ninja Frog/Fall (32x32).png<>uid://cvrhvm0idppyy::::res://Assets/Main Characters/Ninja Frog/Double Jump (32x32).png<>uid://bge1ddc8rdp3v::::res://Assets/Main Characters/Ninja Frog/Run (32x32).png
+::res://global/::1738897309
+::res://Player/::1738896719
+player.gd::GDScript::-1::1738896659::0::1::::<>CharacterBody2D<>::
+player.tscn::PackedScene::2814529472115540260::1738896719::0::1::::<><>::uid://bjyh1ga8puptw::::res://Assets/Main Characters/Ninja Frog/Hit (32x32).png<>res://Player/player.gd<>uid://dhw3852fqqdu6::::res://Assets/Main Characters/Ninja Frog/Idle (32x32).png<>uid://ds3qq4mf1sxij::::res://Assets/Main Characters/Ninja Frog/Fall (32x32).png<>uid://cvrhvm0idppyy::::res://Assets/Main Characters/Ninja Frog/Double Jump (32x32).png<>uid://bge1ddc8rdp3v::::res://Assets/Main Characters/Ninja Frog/Run (32x32).png

@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=3 uid="uid://dn03qvavy8hlg"]
+[gd_scene load_steps=45 format=3 uid="uid://dn03qvavy8hlg"]
 
 [ext_resource type="Texture2D" uid="uid://cd1xocmk6joki" path="res://Assets/Enemy/Mushroom/Mushroom-Attack.png" id="1_vfdnj"]
 [ext_resource type="Script" path="res://mushroom.gd" id="1_xe88c"]
@@ -276,6 +276,9 @@ radius = 161.697
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_io6ei"]
 size = Vector2(15, 37)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8sysj"]
+size = Vector2(29, 36.5)
+
 [node name="Mushroom" type="CharacterBody2D"]
 script = ExtResource("1_xe88c")
 
@@ -288,9 +291,7 @@ shape = SubResource("RectangleShape2D_xxg0u")
 position = Vector2(0, -29.295)
 scale = Vector2(1.6, 1.6)
 sprite_frames = SubResource("SpriteFrames_n24hv")
-animation = &"death"
-frame = 10
-frame_progress = 1.0
+animation = &"idle"
 
 [node name="PlayerDetection" type="Area2D" parent="."]
 visible = false
@@ -301,9 +302,17 @@ shape = SubResource("CircleShape2D_l484k")
 [node name="PlayerDeath" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDeath"]
-position = Vector2(-2, -9)
+position = Vector2(0, -9)
 shape = SubResource("RectangleShape2D_io6ei")
+
+[node name="PlayerCollision" type="Area2D" parent="."]
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerCollision"]
+position = Vector2(-0.5, 3.75)
+shape = SubResource("RectangleShape2D_8sysj")
 
 [connection signal="body_entered" from="PlayerDetection" to="." method="_on_player_detection_body_entered"]
 [connection signal="body_exited" from="PlayerDetection" to="." method="_on_player_detection_body_exited"]
 [connection signal="body_entered" from="PlayerDeath" to="." method="_on_player_detection_2_body_entered"]
+[connection signal="body_entered" from="PlayerCollision" to="." method="_on_player_collision_body_entered"]

@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://cih35vrkcu0um"]
+[gd_scene load_steps=9 format=3 uid="uid://cih35vrkcu0um"]
 
 [ext_resource type="Script" path="res://bg.gd" id="1_12aqc"]
 [ext_resource type="PackedScene" uid="uid://bgdm5h6bc6f2c" path="res://Player/player.tscn" id="1_3747c"]
 [ext_resource type="Texture2D" uid="uid://biubrvn0c2vmt" path="res://Assets/Jungle Asset Pack/parallax background/plx-1.png" id="2_4ykh4"]
 [ext_resource type="Texture2D" uid="uid://dx1p3jqqjleul" path="res://Assets/Terrain/Terrain (16x16).png" id="4_jtv2d"]
 [ext_resource type="PackedScene" uid="uid://dn03qvavy8hlg" path="res://mushroom.tscn" id="5_k5ogy"]
+[ext_resource type="Script" path="res://HP.gd" id="6_ge0i0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_s6gwa"]
 texture = ExtResource("4_jtv2d")
@@ -411,4 +412,31 @@ scale = Vector2(1.78, 1.78)
 [node name="enemy" type="Node2D" parent="."]
 
 [node name="Mushroom" parent="enemy" instance=ExtResource("5_k5ogy")]
-position = Vector2(691.425, 223)
+position = Vector2(649, 278)
+
+[node name="Mushroom2" parent="enemy" instance=ExtResource("5_k5ogy")]
+position = Vector2(516, 279)
+
+[node name="Mushroom3" parent="enemy" instance=ExtResource("5_k5ogy")]
+position = Vector2(862, 276)
+
+[node name="Mushroom4" parent="enemy" instance=ExtResource("5_k5ogy")]
+position = Vector2(976, 236)
+
+[node name="Mushroom5" parent="enemy" instance=ExtResource("5_k5ogy")]
+position = Vector2(252, 256)
+
+[node name="Mushroom6" parent="enemy" instance=ExtResource("5_k5ogy")]
+position = Vector2(1111, 262)
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="HP" type="Label" parent="UI"]
+offset_left = 49.0
+offset_top = 18.0
+offset_right = 166.0
+offset_bottom = 77.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 19
+text = "hello"
+script = ExtResource("6_ge0i0")
