@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cih35vrkcu0um"]
+[gd_scene load_steps=11 format=3 uid="uid://cih35vrkcu0um"]
 
 [ext_resource type="Script" path="res://bg.gd" id="1_12aqc"]
 [ext_resource type="PackedScene" uid="uid://bgdm5h6bc6f2c" path="res://Player/player.tscn" id="1_3747c"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dx1p3jqqjleul" path="res://Assets/Terrain/Terrain (16x16).png" id="4_jtv2d"]
 [ext_resource type="PackedScene" uid="uid://dn03qvavy8hlg" path="res://mushroom.tscn" id="5_k5ogy"]
 [ext_resource type="Script" path="res://HP.gd" id="6_ge0i0"]
+[ext_resource type="Script" path="res://collectables.gd" id="7_uxf72"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_s6gwa"]
 texture = ExtResource("4_jtv2d")
@@ -380,6 +381,20 @@ tile_size = Vector2i(45, 45)
 physics_layer_0/collision_layer = 1
 sources/1 = SubResource("TileSetAtlasSource_s6gwa")
 
+[sub_resource type="GDScript" id="GDScript_mfklb"]
+script/source = "extends Label
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	text = \"Coins: \" + str(Game.coins)
+"
+
 [node name="Game" type="Node2D"]
 position = Vector2(-76, 145)
 
@@ -410,6 +425,7 @@ position = Vector2(395, 123)
 scale = Vector2(1.78, 1.78)
 
 [node name="enemy" type="Node2D" parent="."]
+position = Vector2(1044, -46)
 
 [node name="Mushroom" parent="enemy" instance=ExtResource("5_k5ogy")]
 position = Vector2(649, 278)
@@ -440,3 +456,22 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 19
 text = "hello"
 script = ExtResource("6_ge0i0")
+
+[node name="coins" type="Label" parent="UI"]
+offset_left = 50.0
+offset_top = 43.0
+offset_right = 167.0
+offset_bottom = 102.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 19
+text = "hello"
+script = SubResource("GDScript_mfklb")
+
+[node name="collectables" type="Node2D" parent="."]
+position = Vector2(76, -145)
+script = ExtResource("7_uxf72")
+
+[node name="Timer" type="Timer" parent="collectables"]
+autostart = true
+
+[connection signal="timeout" from="collectables/Timer" to="collectables" method="_on_timer_timeout"]

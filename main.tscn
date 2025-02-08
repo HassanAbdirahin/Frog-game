@@ -7,29 +7,33 @@
 script = ExtResource("1_aj6d8")
 
 [node name="Play" type="Button" parent="."]
-offset_left = 484.0
-offset_top = 257.0
-offset_right = 663.0
-offset_bottom = 316.0
+offset_left = 488.0
+offset_top = 190.0
+offset_right = 667.0
+offset_bottom = 249.0
 text = "Play"
+metadata/_edit_use_anchors_ = true
 
 [node name="Settings" type="Button" parent="."]
-offset_left = 485.0
-offset_top = 325.0
-offset_right = 664.0
-offset_bottom = 384.0
+offset_left = 488.0
+offset_top = 296.0
+offset_right = 667.0
+offset_bottom = 355.0
 text = "Settings"
+metadata/_edit_use_anchors_ = true
 
 [node name="Quit" type="Button" parent="."]
-offset_left = 483.0
-offset_top = 409.0
-offset_right = 662.0
-offset_bottom = 468.0
+offset_left = 488.0
+offset_top = 403.0
+offset_right = 667.0
+offset_bottom = 462.0
 text = "Quit"
+metadata/_edit_use_anchors_ = true
 
 [node name="BG" parent="." instance=ExtResource("2_y6drn")]
 offset = Vector2(0, -7.69)
 transform = Transform2D(1, 0, 0, 1, 0, -7.69)
+follow_viewport_enabled = true
 
 [connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="Settings" to="." method="_on_settings_pressed"]

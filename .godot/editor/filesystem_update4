@@ -1,11 +1,6 @@
 res://main.tscn
 res://game.tscn
 res://Player/player.tscn
-res://bg.tscn
 res://mushroom.tscn
-res://Player/player.gd
-res://HP.gd
-res://mushroom.gd
-res://global/game.gd
-res://global/util.gd
-res://main.gd
+res://coins/coins.tscn
+res://collectables.gd
