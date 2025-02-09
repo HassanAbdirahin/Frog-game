@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cih35vrkcu0um"]
+[gd_scene load_steps=12 format=3 uid="uid://cih35vrkcu0um"]
 
 [ext_resource type="Script" path="res://bg.gd" id="1_12aqc"]
 [ext_resource type="PackedScene" uid="uid://bgdm5h6bc6f2c" path="res://Player/player.tscn" id="1_3747c"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dn03qvavy8hlg" path="res://mushroom.tscn" id="5_k5ogy"]
 [ext_resource type="Script" path="res://HP.gd" id="6_ge0i0"]
 [ext_resource type="Script" path="res://collectables.gd" id="7_uxf72"]
+[ext_resource type="PackedScene" uid="uid://cvneu4glfopuq" path="res://heart.tscn" id="8_thdyf"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_s6gwa"]
 texture = ExtResource("4_jtv2d")
@@ -473,5 +474,8 @@ script = ExtResource("7_uxf72")
 
 [node name="Timer" type="Timer" parent="collectables"]
 autostart = true
+
+[node name="Heart" parent="." instance=ExtResource("8_thdyf")]
+position = Vector2(676, 271)
 
 [connection signal="timeout" from="collectables/Timer" to="collectables" method="_on_timer_timeout"]

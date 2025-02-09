@@ -1,6 +1,6 @@
-res://main.tscn
+res://heart.tscn
+res://heart.gd
 res://game.tscn
+res://main.tscn
 res://Player/player.tscn
-res://mushroom.tscn
 res://coins/coins.tscn
-res://collectables.gd
