@@ -1,7 +1,8 @@
-[gd_scene load_steps=15 format=3 uid="uid://cvneu4glfopuq"]
+[gd_scene load_steps=16 format=3 uid="uid://cvneu4glfopuq"]
 
 [ext_resource type="Script" path="res://heart.gd" id="1_qh32f"]
 [ext_resource type="Texture2D" uid="uid://c1mvrf1a3pqa" path="res://Assets/heart.png" id="2_no5cf"]
+[ext_resource type="AudioStream" uid="uid://5nnpu40wddjl" path="res://sfx/powerUp.wav" id="3_k2kjp"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_fa5l4"]
 
@@ -81,6 +82,23 @@ animations = [{
 "loop": true,
 "name": &"Idle",
 "speed": 20.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vpj0h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vpj0h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vpj0h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vpj0h")
+}],
+"loop": true,
+"name": &"fade",
+"speed": 5.0
 }]
 
 [node name="Heart" type="Area2D"]
@@ -92,7 +110,9 @@ shape = SubResource("CircleShape2D_fa5l4")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_aqkqm")
-animation = &"Idle"
-frame_progress = 0.685433
+animation = &"fade"
+
+[node name="power_up" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_k2kjp")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

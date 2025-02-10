@@ -1,10 +1,11 @@
-[gd_scene load_steps=45 format=3 uid="uid://dn03qvavy8hlg"]
+[gd_scene load_steps=46 format=3 uid="uid://dn03qvavy8hlg"]
 
 [ext_resource type="Texture2D" uid="uid://cd1xocmk6joki" path="res://Assets/Enemy/Mushroom/Mushroom-Attack.png" id="1_vfdnj"]
 [ext_resource type="Script" path="res://mushroom.gd" id="1_xe88c"]
 [ext_resource type="Texture2D" uid="uid://duchd1xiopo3t" path="res://Assets/Enemy/Mushroom/Mushroom-Die.png" id="2_eaup7"]
 [ext_resource type="Texture2D" uid="uid://c8oskf3xito51" path="res://Assets/Enemy/Mushroom/Mushroom-Idle.png" id="3_0d7sf"]
 [ext_resource type="Texture2D" uid="uid://tv5mk8n4hami" path="res://Assets/Enemy/Mushroom/Mushroom-Run.png" id="4_xvc7l"]
+[ext_resource type="AudioStream" uid="uid://bkvfnrpgtxjnc" path="res://sfx/hit.wav" id="6_lbjqf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xxg0u"]
 size = Vector2(12.2137, 22.2137)
@@ -311,6 +312,13 @@ metadata/_edit_lock_ = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerCollision"]
 position = Vector2(-0.5, 3.75)
 shape = SubResource("RectangleShape2D_8sysj")
+
+[node name="sfx" type="Node2D" parent="."]
+
+[node name="player_hurt" type="AudioStreamPlayer2D" parent="sfx"]
+stream = ExtResource("6_lbjqf")
+
+[node name="death" type="AudioStreamPlayer2D" parent="sfx"]
 
 [connection signal="body_entered" from="PlayerDetection" to="." method="_on_player_detection_body_entered"]
 [connection signal="body_exited" from="PlayerDetection" to="." method="_on_player_detection_body_exited"]

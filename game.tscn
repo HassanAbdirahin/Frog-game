@@ -1,13 +1,14 @@
-[gd_scene load_steps=12 format=3 uid="uid://cih35vrkcu0um"]
+[gd_scene load_steps=13 format=3 uid="uid://cih35vrkcu0um"]
 
 [ext_resource type="Script" path="res://bg.gd" id="1_12aqc"]
 [ext_resource type="PackedScene" uid="uid://bgdm5h6bc6f2c" path="res://Player/player.tscn" id="1_3747c"]
+[ext_resource type="Script" path="res://game.gd" id="1_aeid3"]
 [ext_resource type="Texture2D" uid="uid://biubrvn0c2vmt" path="res://Assets/Jungle Asset Pack/parallax background/plx-1.png" id="2_4ykh4"]
 [ext_resource type="Texture2D" uid="uid://dx1p3jqqjleul" path="res://Assets/Terrain/Terrain (16x16).png" id="4_jtv2d"]
 [ext_resource type="PackedScene" uid="uid://dn03qvavy8hlg" path="res://mushroom.tscn" id="5_k5ogy"]
 [ext_resource type="Script" path="res://HP.gd" id="6_ge0i0"]
 [ext_resource type="Script" path="res://collectables.gd" id="7_uxf72"]
-[ext_resource type="PackedScene" uid="uid://cvneu4glfopuq" path="res://heart.tscn" id="8_thdyf"]
+[ext_resource type="AudioStream" uid="uid://l23q6h7nixnl" path="res://music/Background_Music.wav" id="9_2kavh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_s6gwa"]
 texture = ExtResource("4_jtv2d")
@@ -398,6 +399,7 @@ func _process(delta):
 
 [node name="Game" type="Node2D"]
 position = Vector2(-76, 145)
+script = ExtResource("1_aeid3")
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(166.205, 0)
@@ -473,9 +475,13 @@ position = Vector2(76, -145)
 script = ExtResource("7_uxf72")
 
 [node name="Timer" type="Timer" parent="collectables"]
+wait_time = 4.0
 autostart = true
 
-[node name="Heart" parent="." instance=ExtResource("8_thdyf")]
-position = Vector2(676, 271)
+[node name="bg" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(1476, -233)
+scale = Vector2(18.645, 18.645)
+stream = ExtResource("9_2kavh")
+autoplay = true
 
 [connection signal="timeout" from="collectables/Timer" to="collectables" method="_on_timer_timeout"]

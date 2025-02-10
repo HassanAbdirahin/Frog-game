@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 Game="*res://global/game.gd"
 Util="*res://global/util.gd"
+BgSfx="*res://bg_sfx.gd"
 
 [rendering]
 

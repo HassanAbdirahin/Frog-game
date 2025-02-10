@@ -5,6 +5,9 @@ var player;
 var chase = false;
 var SPEED = 150;
 
+@onready var player_hurt = $sfx/player_hurt
+@onready var death_sfx = $sfx/death
+
 func _ready():
 	get_node("AnimatedSprite2D").play("idle");
 
@@ -48,6 +51,8 @@ func _on_player_detection_2_body_entered(body):
 func _on_player_collision_body_entered(body):
 	if body.name == "player":
 		Game.playerHP -= 3;
+		body.get_node("AnimatedSprite2D").play("damage")
+		player_hurt.play()
 		death();
 
 func death():
@@ -55,5 +60,7 @@ func death():
 		Util.saveGame();
 		chase = false;
 		get_node("AnimatedSprite2D").play("death")
+		player_hurt.play()
+		death_sfx.play()
 		await get_node("AnimatedSprite2D").animation_finished;;
 		self.queue_free();

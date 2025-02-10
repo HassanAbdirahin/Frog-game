@@ -1,7 +1,8 @@
-[gd_scene load_steps=13 format=3 uid="uid://djf56njmeqd12"]
+[gd_scene load_steps=14 format=3 uid="uid://djf56njmeqd12"]
 
 [ext_resource type="Texture2D" uid="uid://dqybss1nckv70" path="res://Assets/coin-Sheet.png" id="1_abhbx"]
 [ext_resource type="Script" path="res://coins/coins.gd" id="1_e643r"]
+[ext_resource type="AudioStream" uid="uid://bjv1nam52gx73" path="res://sfx/pickup.wav" id="3_x3x6b"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_fy71a"]
 radius = 10.0499
@@ -85,5 +86,8 @@ animation = &"idle"
 autoplay = "idle"
 frame = 1
 frame_progress = 0.119406
+
+[node name="pickup" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_x3x6b")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
